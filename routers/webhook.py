@@ -1,9 +1,17 @@
 from fastapi import APIRouter, Request
+from pydantic import BaseModel
 
 router = APIRouter()
 
 
-@router.get("/init/")
+class Item(BaseModel):
+    name: str
+    description: str = None
+    price: float
+    tax: float = None
+
+
+@router.post("/init/")
 async def init(request: Request):
     # Parse the incoming JSON data
     data = await request.json()

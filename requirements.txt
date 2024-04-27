@@ -2,3 +2,4 @@ fastapi~=0.110.2
 uvicorn==0.29.0
 h11==0.14.0  # 可能是由 uvicorn 依赖安装的
 starlette==0.37.2  # 可能是由 fastapi 依赖安装的
+pydantic~=2.7.1
